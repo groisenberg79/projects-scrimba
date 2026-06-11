@@ -10,7 +10,7 @@ body {
 .container {
     display: flex;
     justify-content: space-around;
-    background-color: #1B244A;
+    background-color: #105b01;
 }
 
 .score-box {
@@ -43,8 +43,8 @@ span {
 }
 
 .add-btn {
-    color: #9AABD8;
-    background-color: #1B244A;
+    color: #021447;
+    background-color: #02a302;
     border-color: #9AABD8;
     
     font-size: 18px;
