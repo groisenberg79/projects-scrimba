@@ -1,0 +1,18 @@
+# macOS files
+.DS_Store
+
+# root-level lockfile if you don't want it tracked
+package-lock.json
+
+# generated folders from any subproject
+node_modules/
+dist/
+
+# env files
+.env
+.env.*
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
