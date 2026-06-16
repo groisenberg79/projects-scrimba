@@ -1,5 +1,54 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-family: 'Source Sans 3', sans-serif;
 }
 
+.container {
+    width: 450px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px;
+    border-bottom: 1px solid #C6C6C6;
+}
+
+.logo {
+    width: 130px;
+    height: 60px;
+}
+
+.user-avatar, 
+.artist-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+
+.section-header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 15px 15px;
+    gap: 7px;
+}
+
+.avatar-info {
+    font-size: 14px;
+}
+
+p {
+    margin: 0;
+}
+
+.artist-name {
+    font-weight: 900;
+}
+
+.self-portrait {
+    width: 100%;
+}
