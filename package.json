@@ -1,0 +1,21 @@
+{
+  "name": "projects-scrimba",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/groisenberg79/projects-scrimba.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/groisenberg79/projects-scrimba/issues"
+  },
+  "homepage": "https://github.com/groisenberg79/projects-scrimba#readme"
+}
