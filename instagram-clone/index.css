@@ -9,11 +9,14 @@ html, body {
     margin: 0 auto;
 }
 
+header, footer {
+    padding: 13px 13px;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 15px;
     border-bottom: 1px solid #C6C6C6;
 }
 
@@ -51,4 +54,26 @@ p {
 
 .self-portrait {
     width: 100%;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+
+.likes {
+    font-weight: 900;
 }
