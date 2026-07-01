@@ -9,6 +9,9 @@ body {
 
 .app-container {
     width: 600px;
+    border-radius: 20px;
+    border: 5px solid black;
+    overflow: hidden;
 }
 
 header {
