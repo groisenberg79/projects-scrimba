@@ -1,3 +1,43 @@
 body {
     margin: 0;
-} 
+    font-family: "Smythe", sans-serif;
+
+    display: flex;
+    justify-content: center; /* Centers the app horizontally */
+    align-items: center; /* Centers the app vertically */
+}
+
+.app-container {
+    width: 600px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-image: url('./images/ferks-guare-KEZdWfYD-ow-unsplash 1.png');
+    background-size: cover;
+    height: 170px;
+    color: white;
+}
+
+h1, h2 {
+    margin: 0;
+    font-weight: 400;
+}
+
+.main-title {
+    display: flex;
+    flex-direction: column;
+    padding-left: 46px;
+    padding-right: 46px;
+    gap: 5px;
+    transform: translateY(-10px); 
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 20px;
+}
