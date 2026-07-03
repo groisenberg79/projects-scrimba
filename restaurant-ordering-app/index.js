@@ -1,18 +1,19 @@
-import { menuArray } from "./data";
+import { menuArray } from "./data"
 
-const foodOrderArray = [0, 0, 0];
-const menuSection = document.getElementById('menu-section');
-const orderSection = document.getElementById('order-section');
-let totalPrice = 0;
+const foodOrderArray = [0, 0, 0]
+const menuSection = document.getElementById('menu-section')
+const orderSection = document.getElementById('order-section')
+const orderSummary = document.getElementById('order-summary')
+let totalPrice = 0
 
 document.addEventListener("click", handleClickEvent)
 
 function handleClickEvent(event) {
-    const btnClicked = event.target;
+    const btnClicked = event.target
     if (btnClicked.classList.contains('add-btn')) {
-        foodOrderArray[btnClicked.id]++;
-        console.log(foodOrderArray[btnClicked.id]);
-        orderSection.innerHTML = showOrder();
+        addItem(btnClicked.id)
+    } else if (btnClicked.classList.contains('remove-btn')) {
+        removeItem(btnClicked.id)
     }
 }
 
@@ -33,33 +34,55 @@ function showFoodItems() {
             </article>
             <hr>`
     }
-    return menu
+    menuSection.innerHTML = menu
 }
 
 function showOrder() {
-    let order = ''
-    for (let foodItem of menuArray) {
-        if (foodOrderArray[foodItem.id] > 0) {
-            order += `
-                <article class="order-item">
-                    <div class="name-btn-container">
-                        <span class="order-name">${foodItem.name} *${foodOrderArray[foodItem.id]}</span>
-                        <button id="${foodItem.id}" class="remove-btn">remove</button>
-                    <div>
-                    <span class="order-price">$${foodItem.price}</span>
-                </article>`
+    const isAllZero = foodOrderArray.every(numOrders => numOrders === 0)
+    if (isAllZero) {
+        orderSection.innerHTML = ''
+        orderSummary.innerHTML = ''
+    } else {
+        let order = ''
+        for (let foodItem of menuArray) {
+            if (foodOrderArray[foodItem.id] > 0) {
+                order += `
+                    <article class="order-item">
+                        <div class="name-btn-container">
+                            <span class="order-name">${foodItem.name} *${foodOrderArray[foodItem.id]}</span>
+                            <button id="${foodItem.id}" class="remove-btn">remove</button>
+                        <div>
+                        <span class="order-price">$${foodItem.price}</span>
+                    </article>`
+            }
         }
+        orderSection.innerHTML = order
+
+        totalPrice = foodOrderArray.reduce((total, currOrder, index) => 
+            total + menuArray[index].price * foodOrderArray[index], 0)
+
+        ShowOrderSummary(totalPrice)
     }
-    totalPrice = foodOrderArray.reduce((total, currOrder, index) => 
-        total + menuArray[index].price * foodOrderArray[index], 0)
-    order +=`
+}
+
+function ShowOrderSummary(totalPrice) {
+    orderSummary.innerHTML =`
         <hr>
         <article class="order-total">
             <span>Total Price:</span>
             <span>$${totalPrice}</span>
         </article>
         <button id="order-btn">Complete Order</button>`
-    return order
 }
 
-menuSection.innerHTML = showFoodItems()
+function addItem(foodId) {
+    foodOrderArray[foodId]++
+    showOrder()
+}
+
+function removeItem(foodId) {
+    foodOrderArray[foodId]--
+    showOrder()
+}
+
+showFoodItems()
