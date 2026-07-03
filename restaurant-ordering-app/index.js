@@ -4,9 +4,12 @@ const foodOrderArray = [0, 0, 0]
 const menuSection = document.getElementById('menu-section')
 const orderSection = document.getElementById('order-section')
 const orderSummary = document.getElementById('order-summary')
+const cardDetailsModal = document.getElementById('card-details-modal')
+const cardDetailsForm =document.getElementById('card-details-form')
 let totalPrice = 0
 
 document.addEventListener("click", handleClickEvent)
+cardDetailsForm.addEventListener("submit", submitPayment)
 
 function handleClickEvent(event) {
     const btnClicked = event.target
@@ -14,6 +17,8 @@ function handleClickEvent(event) {
         addItem(btnClicked.id)
     } else if (btnClicked.classList.contains('remove-btn')) {
         removeItem(btnClicked.id)
+    } else if (btnClicked.id === 'order-btn') {
+        cardDetailsModal.showModal()
     }
 }
 
@@ -83,6 +88,19 @@ function addItem(foodId) {
 function removeItem(foodId) {
     foodOrderArray[foodId]--
     showOrder()
+}
+
+function submitPayment(event) {
+    event.preventDefault()
+    const cardDetails = {
+        name: document.getElementById('card-name').value,
+        cardNumber: document.getElementById('card-number').value,
+        cardCvv: document.getElementById('card-cvv').value
+    }
+    console.log(cardDetails)
+    cardDetailsModal.close()
+    cardDetailsForm.reset()
+    return cardDetails
 }
 
 showFoodItems()

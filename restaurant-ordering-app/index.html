@@ -22,6 +22,18 @@
             <section id="order-summary">
             </section>
         </div>
+        <!-- The Modal Dialog -->
+        <dialog id="card-details-modal">
+            <div class="modal-content">
+                <h2>Enter card details</h2>
+                <form id="card-details-form">
+                    <input id="card-name" placeholder="Enter your name" type="text" required>
+                    <input id="card-number" placeholder="Enter card number" type="number" required>
+                    <input id="card-cvv" placeholder="Enter CVV" type="number" required>
+                    <button id="pay-btn" type="submit">Pay</button>
+                </form>
+            </div>
+        </dialog>
 	<script src="index.js" type="module"></script>
     </body>
 </html>
