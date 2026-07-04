@@ -1,17 +1,19 @@
 body {
     margin: 0;
     font-family: "Smythe", sans-serif;
-
+    min-height: 100vh;
     display: flex;
     justify-content: center; /* Centers the app horizontally */
-    align-items: center; /* Centers the app vertically */
+    align-items: flex-start; /* Keep the full top border visible */
+    padding: 20px 0;
 }
 
 .app-container {
     width: 600px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
     border-radius: 20px;
     border: 5px solid black;
-    overflow: hidden;
 }
 
 header {
@@ -23,10 +25,6 @@ header {
     color: white;
 }
 
-.food-name {
-    font-size: 28px;
-}
-
 .food-ingredients {
     color: #8B8B8B;
     margin-bottom: 7px;
@@ -36,12 +34,21 @@ header {
     font-size: 20px;
 }
 
+
+h1, h2, p, span {
+    margin: 0;
+}
+
 h1, h2 {
     font-weight: 400;
 }
 
-h1, h2, p, span {
-    margin: 0;
+h1 {
+    font-size: 40px;
+}
+
+h2, .order-price, #total-value {
+    font-size: 20px;
 }
 
 .main-title {
@@ -53,19 +60,11 @@ h1, h2, p, span {
     transform: translateY(-10px); 
 }
 
-h1 {
-    font-size: 40px;
-}
-
-h2 {
-    font-size: 20px;
-}
-
 #hero-container {
     margin: 45px;
 }
 
-article {
+.food-container {
     display: flex;
     justify-content: space-between;
     padding: 45px 0;
@@ -112,4 +111,64 @@ article {
 
 hr {
     margin: 0;
+}
+
+#order-section {
+    margin-bottom: 30px;
+}
+
+.order-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.name-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#order-summary {
+    display: flex;
+    flex-direction: column;
+}
+
+#order-title {
+    text-align: center;
+    margin: 45px 0;
+}
+
+#order-summary hr {
+    border: 2px solid #393333;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.food-name, .order-name, #order-title, #total-text {
+    font-size: 28px;
+}
+
+.remove-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    background-color: white;
+    color:#BBBBBB;
+}
+
+#order-btn {
+    margin-top: 45px;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border: none;
+    color: white;
+    background-color: #16DB99;
 }

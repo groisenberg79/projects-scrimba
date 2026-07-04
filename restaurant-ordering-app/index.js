@@ -13,12 +13,13 @@ document.addEventListener("click", handleClickEvent)
 cardDetailsForm.addEventListener("submit", submitPayment)
 
 function handleClickEvent(event) {
-    const btnClicked = event.target
-    if (btnClicked.classList.contains('add-btn')) {
-        addItem(btnClicked.id)
-    } else if (btnClicked.classList.contains('remove-btn')) {
-        removeItem(btnClicked.id)
-    } else if (btnClicked.id === 'order-btn') {
+    const addBtn = event.target.closest('.add-btn')
+    const removeBtn = event.target.closest('.remove-btn')
+    if (addBtn) {
+        addItem(addBtn.id)
+    } else if (removeBtn) {
+        removeItem(removeBtn.id)
+    } else if (event.target.id === 'order-btn') {
         cardDetailsModal.showModal()
     }
 }
@@ -27,7 +28,7 @@ function showFoodItems() {
     let menu = ''
     for (let item of menuArray) {
         menu += `
-            <article id="${item.id}">
+            <article id="${item.id}" class="food-container">
                 <div class="food-item">
                     <div class="emoji-wrapper">
                     <span class="food-emoji">${item.emoji}</span>
@@ -55,16 +56,16 @@ function showOrder() {
         orderSection.innerHTML = ''
         orderSummary.innerHTML = ''
     } else {
-        let order = ''
+        let order = '<h2 id="order-title">Your Order</h2>'
         for (let foodItem of menuArray) {
             if (foodOrderArray[foodItem.id] > 0) {
                 order += `
-                    <article class="order-item">
-                        <div class="name-btn-container">
+                    <article class="order-container">
+                        <div class="name-container">
                             <span class="order-name">${foodItem.name} *${foodOrderArray[foodItem.id]}</span>
                             <button id="${foodItem.id}" class="remove-btn">remove</button>
-                        <div>
-                        <span class="order-price">$${foodItem.price}</span>
+                        </div>
+                        <span class="order-price">$${foodItem.price * foodOrderArray[foodItem.id]}</span>
                     </article>`
             }
         }
@@ -81,10 +82,10 @@ function ShowOrderSummary(totalPrice) {
     orderSummary.innerHTML =`
         <hr>
         <article class="order-total">
-            <span>Total Price:</span>
-            <span>$${totalPrice}</span>
+            <span id="total-text">Total Price:</span>
+            <span id="total-value">$${totalPrice}</span>
         </article>
-        <button id="order-btn">Complete Order</button>`
+        <button id="order-btn">Complete order</button>`
 }
 
 function addItem(foodId) {
