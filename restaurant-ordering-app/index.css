@@ -23,9 +23,25 @@ header {
     color: white;
 }
 
+.food-name {
+    font-size: 28px;
+}
+
+.food-ingredients {
+    color: #8B8B8B;
+    margin-bottom: 7px;
+}
+
+.food-price {
+    font-size: 20px;
+}
+
 h1, h2 {
-    margin: 0;
     font-weight: 400;
+}
+
+h1, h2, p, span {
+    margin: 0;
 }
 
 .main-title {
@@ -45,11 +61,55 @@ h2 {
     font-size: 20px;
 }
 
+#hero-container {
+    margin: 45px;
+}
+
 article {
     display: flex;
     justify-content: space-between;
+    padding: 45px 0;
 }
 
 .food-item {
     display: flex;
+}
+
+.food-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-left: 15px;
+}
+
+.emoji-wrapper {
+    width: 95px;
+    height: 90px;
+    container-type: inline-size;
+    display: flex;
+    justify-content: center;
+}
+
+.food-emoji {
+  font-size: 85cqw; 
+  line-height: 1;
+}
+
+.add-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    background-color: white;
+    border: 2px solid #DEDEDE;
+    
+}
+
+.add-btn .plus-icon {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    font-weight: 100;
+}
+
+hr {
+    margin: 0;
 }

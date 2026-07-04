@@ -29,14 +29,20 @@ function showFoodItems() {
         menu += `
             <article id="${item.id}">
                 <div class="food-item">
+                    <div class="emoji-wrapper">
                     <span class="food-emoji">${item.emoji}</span>
+                    </div>
                     <div class="food-info">
                         <h2 class="food-name">${item.name}</h2>
-                        <p class="food-ingredients">${item.ingredients.join(', ')}</p
+                        <p class="food-ingredients">${item.ingredients.join(', ')}</p>
                         <span class="food-price">$${item.price}</span>
                     </div>
                 </div>
-                <button id="${item.id}" class="add-btn">+</button>
+                <div class="btn-container">
+                    <button id="${item.id}" class="add-btn">
+                        <span class="plus-icon">+</span>
+                    </button>
+                </div>
             </article>
             <hr>`
     }
