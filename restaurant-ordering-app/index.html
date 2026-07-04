@@ -21,15 +21,41 @@
             </section>
             <section id="order-summary">
             </section>
+            <section id="order-message">
+            </section>
         </div>
         <!-- The Modal Dialog -->
         <dialog id="card-details-modal">
             <div class="modal-content">
                 <h2>Enter card details</h2>
                 <form id="card-details-form">
-                    <input id="card-name" placeholder="Enter your name" type="text" required>
-                    <input id="card-number" placeholder="Enter card number" type="number" required>
-                    <input id="card-cvv" placeholder="Enter CVV" type="number" required>
+                    <input 
+                        id="card-name"
+                        name="cardName"
+                        placeholder="Enter your name" 
+                        type="text" 
+                        minlength="2" 
+                        maxlength="50"
+                        required>
+                    <input 
+                        id="card-number"
+                        name="cardNumber"
+                        placeholder="Enter card number"
+                        inputmode="numeric"
+                        type="tel"
+                        maxlength="19"
+                        pattern="[0-9\s]{13,19}"
+                        autocomplete="cc-number" 
+                        required>
+                    <input 
+                        id="card-cvv"
+                        name="cardCvv"
+                        placeholder="Enter CVV" 
+                        type="text"
+                        inputmode="numeric"
+                        maxlength="4"
+                        autocomplete="cc-csc"
+                        required>
                     <button id="pay-btn" type="submit">Pay</button>
                 </form>
             </div>

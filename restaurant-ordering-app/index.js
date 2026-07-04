@@ -6,6 +6,7 @@ const orderSection = document.getElementById('order-section')
 const orderSummary = document.getElementById('order-summary')
 const cardDetailsModal = document.getElementById('card-details-modal')
 const cardDetailsForm =document.getElementById('card-details-form')
+const orderMessage = document.getElementById('order-message')
 let totalPrice = 0
 
 document.addEventListener("click", handleClickEvent)
@@ -90,6 +91,10 @@ function removeItem(foodId) {
     showOrder()
 }
 
+function showOrderMessage(name) {
+    orderMessage.innerHTML = `<p>Thanks, ${name}! Your order is on its way!</p>`
+}
+
 function submitPayment(event) {
     event.preventDefault()
     const cardDetails = {
@@ -100,6 +105,7 @@ function submitPayment(event) {
     console.log(cardDetails)
     cardDetailsModal.close()
     cardDetailsForm.reset()
+    showOrderMessage(cardDetails.name.split(" ")[0])
     return cardDetails
 }
 
