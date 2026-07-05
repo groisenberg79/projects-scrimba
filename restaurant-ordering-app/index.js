@@ -99,6 +99,8 @@ function removeItem(foodId) {
 }
 
 function showOrderMessage(name) {
+    orderSection.innerHTML = ''
+    orderSummary.innerHTML = ''
     orderMessage.innerHTML = `<p>Thanks, ${name}! Your order is on its way!</p>`
 }
 

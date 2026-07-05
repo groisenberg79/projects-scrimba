@@ -172,3 +172,52 @@ hr {
     color: white;
     background-color: #16DB99;
 }
+
+dialog {
+    width: 500px;
+    height: 500px;
+    border: none;
+    box-shadow: 0 10px 30px -5px;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-content h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    margin: 45px 24px;
+}
+
+input, button {
+    font-size: 20px;
+    width: calc(100% - 48px); /* 100% minus the 24px left and 24px right distance */
+    max-width: 452px; /* Ensures they do not stretch excessively on wider viewports */
+    height: 70px;
+    margin-bottom: 24px;
+    box-sizing: border-box; /* Ensures padding is included inside the width */
+    padding: 12px 24px; /* Recommended: Add padding so the input boxes aren't too flat */
+    border-radius: 5px;
+}
+
+input {
+    border-color: #757575;
+}
+
+button {
+    cursor: pointer;
+    background-color: #16DB99;
+    color: white;
+    border: none;
+    margin-top: 20px;
+}
