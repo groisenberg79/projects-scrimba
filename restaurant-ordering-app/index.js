@@ -52,6 +52,9 @@ function showFoodItems() {
 
 function showOrder() {
     const isAllZero = foodOrderArray.every(numOrders => numOrders === 0)
+    orderMessage.hidden = true
+    orderMessage.innerHTML = ''
+
     if (isAllZero) {
         orderSection.innerHTML = ''
         orderSummary.innerHTML = ''
@@ -99,9 +102,11 @@ function removeItem(foodId) {
 }
 
 function showOrderMessage(name) {
+    foodOrderArray.fill(0)
     orderSection.innerHTML = ''
     orderSummary.innerHTML = ''
     orderMessage.innerHTML = `<p>Thanks, ${name}! Your order is on its way!</p>`
+    orderMessage.hidden = false
 }
 
 function submitPayment(event) {

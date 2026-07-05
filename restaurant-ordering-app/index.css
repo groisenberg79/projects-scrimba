@@ -199,7 +199,7 @@ form {
     margin: 45px 24px;
 }
 
-input, button {
+form input, form button {
     font-size: 20px;
     width: calc(100% - 48px); /* 100% minus the 24px left and 24px right distance */
     max-width: 452px; /* Ensures they do not stretch excessively on wider viewports */
@@ -210,14 +210,22 @@ input, button {
     border-radius: 5px;
 }
 
-input {
+form input {
     border-color: #757575;
 }
 
-button {
+form button {
     cursor: pointer;
     background-color: #16DB99;
     color: white;
     border: none;
     margin-top: 20px;
+}
+
+#order-message {
+    font-size: 28px;
+    text-align: center;
+    padding: 50px 60px;
+    background-color: #ECFDF5;
+    color: #065F46;
 }
